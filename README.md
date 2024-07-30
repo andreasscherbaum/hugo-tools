@@ -39,3 +39,11 @@ Similarly the `list-tags.py` tool scans entries under `tags`.
 Opens an input window (using TKinter) and asks for a blog posting title. Then proceeds to create the blog posting using this name, and a sanitized URL.
 
 It will add a date in front of the URL.
+
+## add-to-gitignore.py
+
+Specify one or multiple image files which will be added to the `.gitignore` file in the same directory. If the `.gitignore` file does not exist, it will be created.
+
+Only files ending in `.jpg`, `.jpeg`, `.png` and `.xcf` (*Gimp* project files) will be added, every other file is ignored.
+
+This tool is useful to quickly add image files for a blog posting which are stored in the blog posting directory, but are not supposed to appear on the website. Like original images and such.
