@@ -115,7 +115,9 @@ def create_blog_posting(button):
         '\\': '-',
         '(': '-',
         ')': '-',
-        '*': '-'
+        '*': '-',
+        '.': '-',
+        "'": ''
     }
     for other, replacement in other_replacements.items():
         blog_url = blog_url.replace(other, replacement)
@@ -125,6 +127,7 @@ def create_blog_posting(button):
 
     # having dashes in the url leads to ugly '---'
     blog_url = re.sub(r'\-+', '-', blog_url)
+    blog_url = blog_url.strip('-')
 
     blog_url = "{date}_{url}".format(date = iso_date, url = blog_url)
     blog_path = "content/post/{url}/index.md".format(url = blog_url)
